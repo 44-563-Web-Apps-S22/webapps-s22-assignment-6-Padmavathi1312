@@ -20,7 +20,40 @@
 
     <div id="result"></div>
     
+    <form style="background-color: cornsilk;">
+        <input type="radio" id="multiply" name="equation" value="times" onclick="chooseOp()">
+        <label for="multiply">*</label></br>
+      
+        <input type="radio" id="divide" name="equation"  onclick="chooseOp()" 
+           value="divide">
+        <label for="divide">/</label></br>
+      
+        <input type="radio" id="exponent" name="equation"  onclick="chooseOp()"   
+           value="exponent">
+        <label for="exponent">**</label></br>
+      </form>
 
+      <p id="results">Choose an equation</p>
+
+  <script> 
+    function chooseOp(){
+        var amnt=(Number)(document.getElementById("amount").value)
+        var tipIncr=(Number)(document.getElementById("tip").value)
+         exponent=document.getElementById("exponent").checked
+     
+         multiply=document.getElementById("multiply").checked
+       
+         divide=document.getElementById("divide").checked
+         
+      if(exponent)
+        document.getElementById('results').innerHTML="<b>Exponential Value of Amount and Tip is: </b>"+amnt**tipIncr
+        else if(times)
+        document.getElementById('results').innerHTML="<b>Multiplication Value of Amount and Tip is: </b>"+amnt*tipIncr
+        else if(divide)
+        document.getElementById('results').innerHTML="<b>Division value of Amount and Tip is: </b>"+amnt/tipIncr
+    
+    }
+    </script>
 
 <script> 
     function tips(){
