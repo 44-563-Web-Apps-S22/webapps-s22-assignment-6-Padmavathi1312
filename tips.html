@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tips </title>
+    </head>
+ 
+<body>
+
+    <h2>Padmavathi Maddukuri computes tips</h2>
+
+    <form style="color: brown; background-color: beige;">
+        <label for="amount"> Enter a check amount </label>
+        <input type ="number" id="amount" name="amount" value=20> <br>
+    
+        <label for="tip"> Enter tip increase </label>
+        <input type ="number" id="tip" name="tip" value=0.05> <br>
+    
+        <input type="button" onclick="tips()" value="Find tips">
+    </form>
+
+    <div id="result"></div>
+    
+
+
+<script> 
+    function tips(){
+        var amnt=(Number)(document.getElementById("amount").value)
+        var tipIncr=(Number)(document.getElementById("tip").value)
+        result="Tip amounts by increase of "+tipIncr+" are: "
+     
+        var sum=amnt*0.1
+        result+=sum+0.0
+        for(let i=0;i<9;i++){
+         var y=sum +(amnt*tipIncr);
+         result += " "+Math.round(y * 10) / 10
+         sum=Math.round(y * 10) / 10
+    }
+    document.getElementById('result').innerHTML=result;
+    }
+    
+    </script>
+
+</body>
+</html> 
